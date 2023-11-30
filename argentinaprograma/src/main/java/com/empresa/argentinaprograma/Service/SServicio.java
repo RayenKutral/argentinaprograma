@@ -13,7 +13,12 @@ import com.empresa.argentinaprograma.Repository.RServicio;
 public class SServicio {
     
     @Autowired
-    private RServicio servicioRepo;
+    private final RServicio servicioRepo;
+    @Autowired
+    public SServicio(RServicio servicioRepo) {
+        this.servicioRepo = servicioRepo;
+    }
+    
     
     //Crud basico
     public void agregarServicio(Servicio servicio){

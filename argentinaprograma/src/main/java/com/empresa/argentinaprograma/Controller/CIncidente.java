@@ -27,31 +27,35 @@ public class CIncidente {
     }
     
     //CRUD basico
-    @GetMapping(value = "/reportes-incidentes/incidentes", headers="Accept=application/json") 
+    @GetMapping(value = "/empresa/incidentes", headers="Accept=application/json") 
     @ResponseBody
     public List<Incidente> mostrarIncidente(){
         return this.incidente.mostrarTodos();
     }
     
-    @PostMapping (value = "/reportes-incidentes/incidentes/agregar", headers="Accept=application/json")
+    @PostMapping (value = "/empresa/incidentes/agregar", headers="Accept=application/json")
     public String agregarIncidente (@RequestBody Incidente incidente){
         this.incidente.agregarIncidente(incidente);
         return "Incidente creado";
     }
     
-    @GetMapping (value = "/reportes-incidentes/incidentes/{id}", headers="Accept=application/json")
+    @GetMapping (value = "/empresa/incidentes/{id}", headers="Accept=application/json")
     @ResponseBody
     public Optional<Incidente> mostrarIncidente (@PathVariable long id){
         return this.incidente.buscarIncidente(id);
     }
     
-    @PutMapping (value = "/reportes-incidentes/incidentes/actualizar/{id}", headers="Accept=application/json")
+    @PutMapping (value = "/empresa/incidentes/actualizar/{id}", headers="Accept=application/json")
     public void modificarIncidente (@PathVariable long id, @RequestBody Incidente incidente){
         this.incidente.modificarIncidente(id, incidente);
     }
     
-    @DeleteMapping (value = "/reportes-incidentes/incidentes/eliminar/{id}", headers="Accept=application/json")
+    @DeleteMapping (value = "/empresa/incidentes/eliminar/{id}", headers="Accept=application/json")
     public void eliminarIncidente (@PathVariable long id){
         this.incidente.eliminarIncidente(id);
     }
+
+	public List<Incidente> mostrarTodos() {	
+	        return this.incidente.mostrarTodos();
+	}
 }

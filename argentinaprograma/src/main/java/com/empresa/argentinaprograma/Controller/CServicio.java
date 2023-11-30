@@ -29,29 +29,29 @@ public class CServicio {
     }
     
     //CRUD BASICO
-    @GetMapping (value = "/reportes-incidentes/servicios", headers = "Accept = application/json")
+    @GetMapping (value = "/empresa/servicios", headers = "Accept = application/json")
     public List <Servicio> mostrarTodos(){
         return this.servicio.mostrarTodos();
     }
     
-    @PostMapping (value = "/reportes-incidentes/servicios/agregar", headers="Accept=application/json")
+    @PostMapping (value = "/empresa/servicios/agregar", headers="Accept=application/json")
     public String agregarServicio (@RequestBody Servicio servicio){
         this.servicio.agregarServicio(servicio);
         return "Cliente creado";
     }
     
-    @GetMapping (value = "/reportes-incidentes/servicios/{id}", headers="Accept=application/json")
+    @GetMapping (value = "/empresa/servicios/{id}", headers="Accept=application/json")
     @ResponseBody
     public Optional<Servicio> mostrarServicio (@PathVariable long id){
         return this.servicio.buscarIncidente(id);
     }
     
-    @PutMapping (value = "/reportes-incidentes/servicios/actualizar", headers="Accept=application/json")
+    @PutMapping (value = "/empresa/servicios/actualizar", headers="Accept=application/json")
     public void modificarServicio (@RequestBody Servicio servicio){
         this.servicio.modificarIncidente(servicio);
     }
     
-    @DeleteMapping (value = "/reportes-incidentes/servicios/eliminar/{id}", headers="Accept=application/json")
+    @DeleteMapping (value = "/empresa/servicios/eliminar/{id}", headers="Accept=application/json")
     public void eliminarServicio (@PathVariable long id){
         this.servicio.eliminarServicio(id);
     }

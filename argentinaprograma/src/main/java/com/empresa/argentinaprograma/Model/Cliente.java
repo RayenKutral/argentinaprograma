@@ -21,8 +21,7 @@ public class Cliente {
     @Column(name = "cuit", nullable=false, length = 12)
     private long cuit;
     @Column(name = "razon_social", nullable=false, length = 70 )
-    private String razonSocial;
- 
+    private String razonSocial; 
     @Column (name = "id_sericio", nullable = false)
     private long idServicio;
 

@@ -16,10 +16,15 @@ import com.empresa.argentinaprograma.Repository.RIncidente;
 public class SIncidente {
     
     @Autowired
-    private RIncidente rIncidente;
+    private final RIncidente rIncidente;
     
     @Autowired
     private SIncidentesResueltos sIncidenteResuelto;
+    
+    @Autowired
+    public SIncidente(RIncidente rIncidente) {
+        this.rIncidente = rIncidente;
+    }
     
     //Crud basico
     public void agregarIncidente(Incidente incidente){

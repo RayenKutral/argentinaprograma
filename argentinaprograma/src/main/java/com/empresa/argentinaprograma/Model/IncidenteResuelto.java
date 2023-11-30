@@ -34,21 +34,22 @@ public class IncidenteResuelto {
     @Temporal (TemporalType.DATE)
     private String fechaSolucion;
 
-    public IncidenteResuelto (long idIncidente, String tipoProblema, String descripcionProblema, long idTecnico, String fechaSolucion) {
-        this.idIncidente = idIncidente;
-        this.tipoProblema = tipoProblema;
-        this.descripcionProblema = descripcionProblema;
-        this.idTecnico = idTecnico;
-        
-        //En caso de que la fecha ingresada no sea valida, se ocupara un valor predeterminado de una semana
-        //Es decir la fecha de solucion estimada sera una semana despues de haber registrado el incidente
-        
+    public IncidenteResuelto(Incidente incidente, String fechaSolucion) {
+        this.idIncidente = incidente.getIdIncidente();
+        this.tipoProblema = incidente.getTipoProblema();
+        this.descripcionProblema = incidente.getDescripcionProblema();
+        this.idTecnico = incidente.getIdTecnico();
+        this.fechaRegistro = incidente.getFechaRegistro();
+        this.fechaEstimadaSolucion = incidente.getFechaEstimadaSolucion();   
+    
         try{
             this.fechaSolucion=fechaSolucion;   
         }catch(Exception e){
             this.fechaSolucion = null;
         }
     }
+    
+    
 
     public IncidenteResuelto () {
     }
