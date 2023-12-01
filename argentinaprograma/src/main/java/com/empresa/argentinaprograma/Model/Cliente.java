@@ -32,6 +32,15 @@ public class Cliente {
         this.idServicio = idServicio;
     }
 
+    @Override
+    public String toString() {
+        return String.format("Cliente[id=%d, "
+        		+ "cuit='%s',"
+        		+ " Razón social='%s',"
+        		+ " id Servicio='%s']",        		
+                idCliente, cuit, razonSocial, idServicio);
+    }
+    
     public Cliente() {
     }
 

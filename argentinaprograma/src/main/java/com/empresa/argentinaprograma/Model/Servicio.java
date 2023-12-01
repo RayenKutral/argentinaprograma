@@ -23,6 +23,13 @@ public class Servicio {
         this.idServicio = idServicio;
         this.nombre = nombre;
     }
+    
+    @Override
+    public String toString() {
+        return String.format("Servicio[id=%d, "
+        		+ "Nombre='%s']",
+                idServicio,nombre);
+    }
 
     public Servicio() {
     }

@@ -31,6 +31,7 @@ import lombok.Setter;
 	    @Column(name = "fecha_estimada_solucion", nullable = false, length = 10)
 	    @Temporal (TemporalType.DATE)
 	    private String fechaEstimadaSolucion;
+	    private String estado;
 	    @Column (name = "fecha_solucion", length = 10)
 	    @Temporal (TemporalType.DATE)
 	    private String fechaSolucion = null;
@@ -50,6 +51,19 @@ import lombok.Setter;
 	        }
 	    }
 
+	    @Override
+	    public String toString() {
+	        return String.format("Incidente[id=%d, "
+	        		+ "Tipo Problema='%s', "
+	        		+ "Descripcion Problema='%s', "
+	        		+ "id Tecnico='%s', "
+	        		+ "Fecha estimada solución='%s', "
+	        		+ "Estado= '%s]",
+	        
+	        		
+	                idIncidente, tipoProblema, descripcionProblema, idTecnico, fechaEstimadaSolucion, estado);
+	    }
+	    
 	    public Incidente() {
 	    }
 
@@ -101,6 +115,14 @@ import lombok.Setter;
 			this.fechaEstimadaSolucion = fechaEstimadaSolucion;
 		}
 
+		public String getEstado() {
+			return estado;
+		}
+
+		public void setEstado(String estado) {
+			this.estado = estado;
+		}
+
 		public String getFechaSolucion() {
 			return fechaSolucion;
 		}
@@ -110,7 +132,6 @@ import lombok.Setter;
 		}
 
 	
-	    
 	    
 	    
 	}

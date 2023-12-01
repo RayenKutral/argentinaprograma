@@ -39,6 +39,17 @@ public class Tecnico{
         this.especialidad = especialidad;
     }
 
+    @Override
+    public String toString() {
+        return String.format("Tecnico[id=%d, "
+        		+ "dni='%s', "
+        		+ "email='%s', "
+        		+ "especialidad='%s', "
+        		+ "nombre='%s', "
+        		+ "telefono='%s']",
+                idTecnico, dni, email, especialidad, nombre, telefono);
+    }
+    
     public Tecnico() {
     }
 
